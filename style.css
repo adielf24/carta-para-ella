@@ -1,0 +1,117 @@
+
+body {
+    background-color: #ffe6eb;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 50px 20px;
+}
+
+.contenedor {
+    max-width: 500px;
+    margin: auto;
+}
+
+h1 {
+    color: #d6336c;
+    font-size: 32px;
+}
+
+.sobre {
+    background-color: #ff6b81;
+    width: 250px;
+    height: 170px;
+    margin: 40px auto;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px #0002;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.corazon {
+    font-size: 55px;
+}
+
+.sobre p {
+    color: white;
+    font-weight: bold;
+}
+
+.carta {
+    display: none;
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px #0002;
+    line-height: 1.8;
+}
+
+.carta h2 {
+    color: #d6336c;
+}
+
+/* Corazones flotantes */
+
+.corazon-flotante {
+    position: fixed;
+    bottom: -50px;
+    font-size: 30px;
+    pointer-events: none;
+    animation: flotar 4s linear forwards;
+    z-index: 10;
+}
+
+@keyframes flotar {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
+}
+
+/* Diseño mejorado del sobre */
+
+.sobre {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.sobre:hover {
+    transform: scale(1.05);
+}
+
+.solapa {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+    background-color: #ff8fa3;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    transform-origin: top center;
+    transition: transform 0.8s ease;
+    z-index: 1;
+}
+
+.corazon {
+    position: relative;
+    z-index: 2;
+}
+
+.sobre p {
+    position: relative;
+    z-index: 2;
+    margin-top: 5px;
+}
+
+.sobre.abierto .solapa {
+    transform: rotateX(180deg);
+}
