@@ -115,3 +115,57 @@ h1 {
 .sobre.abierto .solapa {
     transform: rotateX(180deg);
 }
+
+/* Diseño para celulares */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 30px 15px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .sobre {
+        width: 220px;
+        height: 160px;
+    }
+
+    .carta {
+        padding: 20px;
+        font-size: 16px;
+    }
+
+}
+
+/* Botón de música romántica */
+
+.boton-musica {
+    display: inline-block;
+    background-color: #e84370;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 15px 0;
+    transition: transform 0.3s ease;
+}
+
+.boton-musica:hover {
+    transform: scale(1.08);
+    background-color: #c92a55;
+}
+
+.reproductor {
+    width: 100%;
+    margin: 20px auto;
+}
+
+.reproductor iframe {
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+}
